@@ -6,7 +6,11 @@
 
     <groupId>com.siyi.bulls</groupId>
     <artifactId>bulls-stock-backend</artifactId>
+    <packaging>pom</packaging>
     <version>1.0.0</version>
+    <modules>
+        <module>bulls-stock-gateway</module>
+    </modules>
 
     <!-- 自定义属性， 统一管理版本 -->
     <properties>
