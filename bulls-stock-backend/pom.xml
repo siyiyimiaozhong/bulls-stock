@@ -22,6 +22,7 @@
         <module>bulls-stock-common</module>
         <module>bulls-stock-common/bulls-stock-common-system</module>
         <module>bulls-stock-common/bulls-stock-common-utils</module>
+        <module>bulls-stock-entity</module>
     </modules>
 
     <!-- 自定义属性， 统一管理版本 -->
