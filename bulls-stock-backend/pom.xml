@@ -19,6 +19,9 @@
 <!--        <module>grpc-demo</module>-->
 <!--        <module>netty-demo</module>-->
         <module>mybatis-generator</module>
+        <module>bulls-stock-common</module>
+        <module>bulls-stock-common/bulls-stock-common-system</module>
+        <module>bulls-stock-common/bulls-stock-common-utils</module>
     </modules>
 
     <!-- 自定义属性， 统一管理版本 -->
