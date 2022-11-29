@@ -9,7 +9,7 @@ import java.util.Collections;
  * @Author: siyiyimiaozhong
  * @Description:
  * @Project: bulls-stock-backend
- * @Package: com.siyi.bulls.stock.trade.auth.pojo.bo
+ * @Package: com.siyi.trade.bulls.stock.auth.pojo.bo
  * @ClassName: AuthTradeUser.java
  * @CreateTime: 2022-11-14  07:07
  * @Version: 1.0

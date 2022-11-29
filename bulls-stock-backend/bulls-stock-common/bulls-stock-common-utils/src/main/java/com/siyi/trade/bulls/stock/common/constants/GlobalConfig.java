@@ -4,7 +4,7 @@ package com.siyi.trade.bulls.stock.common.constants;
  * @Author: siyiyimiaozhong
  * @Description:
  * @Project: bulls-stock-backend
- * @Package: com.siyi.bulls.stock.common.constants
+ * @Package: com.siyi.trade.bulls.stock.common.constants
  * @ClassName: GlobalConfig.java
  * @CreateTime: 2022-11-13  16:20
  * @Version: 1.0

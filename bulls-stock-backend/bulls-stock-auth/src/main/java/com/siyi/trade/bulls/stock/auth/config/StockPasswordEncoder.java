@@ -10,7 +10,7 @@ import org.springframework.stereotype.Service;
  * @Author: siyiyimiaozhong
  * @Description:
  * @Project: bulls-stock-backend
- * @Package: com.siyi.bulls.stock.trade.auth.config
+ * @Package: com.siyi.trade.bulls.stock.auth.config
  * @ClassName: StockPasswordEncoder.java
  * @CreateTime: 2022-11-17  12:40
  * @Version: 1.0

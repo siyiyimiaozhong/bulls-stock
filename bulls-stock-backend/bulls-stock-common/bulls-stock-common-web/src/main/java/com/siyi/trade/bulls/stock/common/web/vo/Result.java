@@ -10,7 +10,7 @@ import java.io.Serializable;
  * @Author: siyiyimiaozhong
  * @Description: 统一API接口数据返回对象
  * @Project: bulls-stock-backend
- * @Package: com.siyi.bulls.stock.common.web.vo
+ * @Package: com.siyi.trade.bulls.stock.common.web.vo
  * @ClassName: Result.java
  * @CreateTime: 2022-11-13  23:35
  * @Version: 1.0

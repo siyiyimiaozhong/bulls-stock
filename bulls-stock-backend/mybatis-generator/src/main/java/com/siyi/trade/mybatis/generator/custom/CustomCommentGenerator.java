@@ -13,7 +13,7 @@ import java.util.List;
  * @Author: siyiyimiaozhong
  * @Description:
  * @Project: bulls-stock-backend
- * @Package: com.siyi.mybatis.generator.custom
+ * @Package: com.siyi.trade.mybatis.generator.custom
  * @CreateTime: 2022-10-24  22:53
  * @Version: 1.0
  */

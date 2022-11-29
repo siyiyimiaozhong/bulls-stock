@@ -16,7 +16,7 @@ import org.springframework.web.servlet.ModelAndView;
  * @Author: siyiyimiaozhong
  * @Description:
  * @Project: bulls-stock-backend
- * @Package: com.siyi.bulls.stock.trade.auth.controller
+ * @Package: com.siyi.trade.bulls.stock.auth.controller
  * @ClassName: TradeStockTokenController.java
  * @CreateTime: 2022-11-17  12:45
  * @Version: 1.0

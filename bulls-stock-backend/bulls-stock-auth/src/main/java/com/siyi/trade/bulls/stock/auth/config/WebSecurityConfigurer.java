@@ -17,7 +17,7 @@ import org.springframework.security.core.userdetails.UserDetailsService;
  * @Author: siyiyimiaozhong
  * @Description:
  * @Project: bulls-stock-backend
- * @Package: com.siyi.bulls.stock.trade.auth.config
+ * @Package: com.siyi.trade.bulls.stock.auth.config
  * @ClassName: WebSecurityConfigurer.java
  * @CreateTime: 2022-11-17  12:41
  * @Version: 1.0

@@ -4,7 +4,7 @@ package com.siyi.trade.mybatis.generator.constant;
  * @Author: siyiyimiaozhong
  * @Description:
  * @Project: bulls-stock-backend
- * @Package: com.siyi.mybatis.generator.constant
+ * @Package: com.siyi.trade.mybatis.generator.constant
  * @CreateTime: 2022-10-26  23:38
  * @Version: 1.0
  */

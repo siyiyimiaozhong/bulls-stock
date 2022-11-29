@@ -35,7 +35,7 @@ import java.util.Map;
  * @Author: siyiyimiaozhong
  * @Description:
  * @Project: bulls-stock-backend
- * @Package: com.siyi.bulls.stock.trade.auth.config
+ * @Package: com.siyi.trade.bulls.stock.auth.config
  * @ClassName: AuthorizationServerConfig.java
  * @CreateTime: 2022-11-17  12:37
  * @Version: 1.0

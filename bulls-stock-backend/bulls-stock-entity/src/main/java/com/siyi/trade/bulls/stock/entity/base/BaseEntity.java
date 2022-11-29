@@ -11,7 +11,7 @@ import java.io.Serializable;
  * @Author: siyiyimiaozhong
  * @Description:
  * @Project: bulls-stock-backend
- * @Package: com.siyi.bulls.stock.entity.base
+ * @Package: com.siyi.trade.bulls.stock.entity.base
  * @ClassName: BaseEntity.java
  * @CreateTime: 2022-11-13  21:18
  * @Version: 1.0

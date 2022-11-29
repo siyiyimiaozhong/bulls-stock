@@ -4,7 +4,7 @@ package com.siyi.trade.bulls.stock.common.exception.constants;
  * @Author: siyiyimiaozhong
  * @Description: 代表组件类型异常, 比如内部的工具组件处理错抛出的异常错误码信息
  * @Project: bulls-stock-backend
- * @Package: com.siyi.bulls.stock.common.exception.constants
+ * @Package: com.siyi.trade.bulls.stock.common.exception.constants
  * @ClassName: ComponentErrorCodeEnum.java
  * @CreateTime: 2022-11-13  16:28
  * @Version: 1.0

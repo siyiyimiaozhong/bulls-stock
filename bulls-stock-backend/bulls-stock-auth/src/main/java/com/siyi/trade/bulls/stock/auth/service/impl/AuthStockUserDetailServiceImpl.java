@@ -16,7 +16,7 @@ import org.springframework.stereotype.Service;
  * @Author: siyiyimiaozhong
  * @Description:
  * @Project: bulls-stock-backend
- * @Package: com.siyi.bulls.stock.trade.auth.service.impl
+ * @Package: com.siyi.trade.bulls.stock.auth.service.impl
  * @ClassName: AuthStockUserDetailServiceImpl.java
  * @CreateTime: 2022-11-14  13:03
  * @Version: 1.0

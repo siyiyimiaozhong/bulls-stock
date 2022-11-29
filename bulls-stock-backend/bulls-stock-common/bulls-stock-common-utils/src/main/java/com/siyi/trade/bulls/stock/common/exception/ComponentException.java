@@ -6,7 +6,7 @@ import com.siyi.trade.bulls.stock.common.exception.constants.IErrorCodeEnum;
  * @Author: siyiyimiaozhong
  * @Description: 自定义组件异常
  * @Project: bulls-stock-backend
- * @Package: com.siyi.bulls.stock.common.exception
+ * @Package: com.siyi.trade.bulls.stock.common.exception
  * @ClassName: ComponentException.java
  * @CreateTime: 2022-11-13  16:27
  * @Version: 1.0

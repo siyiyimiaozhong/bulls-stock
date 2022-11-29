@@ -17,7 +17,7 @@ import java.security.SecureRandom;
  * @Author: siyiyimiaozhong
  * @Description:
  * @Project: bulls-stock-backend
- * @Package: com.siyi.bulls.stock.common.encrypt
+ * @Package: com.siyi.trade.bulls.stock.common.encrypt
  * @ClassName: EncryptUtil.java
  * @CreateTime: 2022-11-13  16:23
  * @Version: 1.0

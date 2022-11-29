@@ -4,7 +4,7 @@ package com.siyi.trade.bulls.stock.common.exception.constants;
  * @Author: siyiyimiaozhong
  * @Description:
  * @Project: bulls-stock-backend
- * @Package: com.siyi.bulls.stock.common.exception.constants
+ * @Package: com.siyi.trade.bulls.stock.common.exception.constants
  * @ClassName: WarningLevelEnum.java
  * @CreateTime: 2022-11-13  16:29
  * @Version: 1.0

@@ -9,7 +9,7 @@ import java.util.List;
  * @Description:
  * @Author: siyiyimiaozhong
  * @Project: bulls-stock-backend
- * @Package: com.siyi.mybatis.generator.startup
+ * @Package: com.siyi.trade.mybatis.generator.startup
  * @CreateTime: 2022-10-24  22:59
  * @Version: 1.0
  */
