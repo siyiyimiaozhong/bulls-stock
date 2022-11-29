@@ -42,8 +42,8 @@ CREATE TABLE `t_account_warn_notify_message`  (
   `memo` varchar(500) CHARACTER SET utf8 COLLATE utf8_general_ci NULL DEFAULT NULL COMMENT '备注，如果失败， 记录异常信息',
   `update_time` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP COMMENT '更新时间',
   PRIMARY KEY (`id`) USING BTREE,
-  INDEX `account_warn_notify_sendStatus`(`sendStatus`) USING BTREE,
-  INDEX `account_warn_notify_retryTimes`(`retryTimes`) USING BTREE
+  INDEX `account_warn_notify_sendStatus`(`send_status`) USING BTREE,
+  INDEX `account_warn_notify_retryTimes`(`retry_times`) USING BTREE
 ) ENGINE = InnoDB AUTO_INCREMENT = 1 CHARACTER SET = utf8 COLLATE = utf8_general_ci COMMENT = '账户预警通知记录表' ROW_FORMAT = Dynamic;
 
 -- ----------------------------
@@ -64,8 +64,8 @@ CREATE TABLE `t_account_warn_setting`  (
   `create_time` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP COMMENT '创建时间',
   `update_time` timestamp NOT NULL DEFAULT '0000-00-00 00:00:00' COMMENT '更新时间',
   PRIMARY KEY (`id`) USING BTREE,
-  INDEX `account_warn_setting_accountNo`(`accountId`) USING BTREE,
-  INDEX `account_warn_setting_stockId`(`stockId`) USING BTREE
+  INDEX `account_warn_setting_accountNo`(`account_id`) USING BTREE,
+  INDEX `account_warn_setting_stockId`(`stock_id`) USING BTREE
 ) ENGINE = InnoDB AUTO_INCREMENT = 1 CHARACTER SET = utf8 COLLATE = utf8_general_ci COMMENT = '账户预警设置表' ROW_FORMAT = Dynamic;
 
 -- ----------------------------
@@ -111,7 +111,7 @@ CREATE TABLE `t_authority_menu_operation`  (
   `status` tinyint(3) NOT NULL COMMENT '状态（0无效1有效）',
   `operation_resource_url` varchar(2048) CHARACTER SET utf8 COLLATE utf8_general_ci NULL DEFAULT NULL COMMENT '权限菜单url',
   PRIMARY KEY (`id`) USING BTREE,
-  INDEX `fkmenuId`(`menuId`) USING BTREE
+  INDEX `fkmenuId`(`menu_id`) USING BTREE
 ) ENGINE = InnoDB AUTO_INCREMENT = 1 CHARACTER SET = utf8 COLLATE = utf8_general_ci COMMENT = '菜单操作表' ROW_FORMAT = DYNAMIC;
 
 -- ----------------------------
@@ -126,7 +126,7 @@ CREATE TABLE `t_authority_no_limit_uri`  (
   `id` bigint(19) NOT NULL AUTO_INCREMENT COMMENT '自增主键',
   `no_limit_uri` varchar(160) CHARACTER SET utf8 COLLATE utf8_general_ci NULL DEFAULT NULL COMMENT '不限制的uri',
   PRIMARY KEY (`id`) USING BTREE,
-  UNIQUE INDEX `idx_noLimitUri`(`noLimitUri`) USING BTREE
+  UNIQUE INDEX `idx_noLimitUri`(`no_limit_uri`) USING BTREE
 ) ENGINE = InnoDB AUTO_INCREMENT = 1 CHARACTER SET = utf8 COLLATE = utf8_general_ci COMMENT = '开放菜单表（无须权限认证）' ROW_FORMAT = DYNAMIC;
 
 -- ----------------------------
@@ -160,7 +160,7 @@ CREATE TABLE `t_authority_role_menu`  (
   `role_id` bigint(19) NOT NULL COMMENT '自定义角色id',
   `menu_id` bigint(19) NOT NULL COMMENT '菜单id',
   PRIMARY KEY (`id`) USING BTREE,
-  UNIQUE INDEX `index_roleId_menuId`(`roleId`, `menuId`) USING BTREE
+  UNIQUE INDEX `index_roleId_menuId`(`role_id`, `menu_id`) USING BTREE
 ) ENGINE = InnoDB AUTO_INCREMENT = 1 CHARACTER SET = utf8 COLLATE = utf8_general_ci COMMENT = '角色菜单关联表' ROW_FORMAT = DYNAMIC;
 
 -- ----------------------------
@@ -176,7 +176,7 @@ CREATE TABLE `t_authority_role_operation`  (
   `role_id` bigint(19) NULL DEFAULT NULL COMMENT '自定义角色id',
   `operation_id` bigint(19) NULL DEFAULT NULL COMMENT '自定义操作id',
   PRIMARY KEY (`id`) USING BTREE,
-  UNIQUE INDEX `fk_operation_role_id`(`operationId`, `roleId`) USING BTREE
+  UNIQUE INDEX `fk_operation_role_id`(`operation_id`, `role_id`) USING BTREE
 ) ENGINE = InnoDB AUTO_INCREMENT = 1 CHARACTER SET = utf8 COLLATE = utf8_general_ci COMMENT = '角色操作关联表' ROW_FORMAT = DYNAMIC;
 
 -- ----------------------------
@@ -202,7 +202,7 @@ CREATE TABLE `t_authority_user`  (
   `is_admin` tinyint(3) NOT NULL DEFAULT 0 COMMENT '是否管理员（0否1是）',
   `remark` varchar(300) CHARACTER SET utf8 COLLATE utf8_general_ci NULL DEFAULT NULL COMMENT '备注',
   PRIMARY KEY (`id`) USING BTREE,
-  UNIQUE INDEX `idx_userAccount`(`userAccount`) USING BTREE
+  UNIQUE INDEX `idx_userAccount`(`user_account`) USING BTREE
 ) ENGINE = InnoDB AUTO_INCREMENT = 1 CHARACTER SET = utf8 COLLATE = utf8_general_ci COMMENT = '用户表' ROW_FORMAT = DYNAMIC;
 
 -- ----------------------------
@@ -251,7 +251,7 @@ CREATE TABLE `t_company`  (
   `last_update_user` varchar(32) CHARACTER SET utf8 COLLATE utf8_general_ci NULL DEFAULT NULL COMMENT '最后更新人名称',
   `last_update_time` datetime NOT NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP COMMENT '最后更新时间',
   PRIMARY KEY (`id`) USING BTREE,
-  INDEX `idx_accountNo2`(`contactUser`) USING BTREE
+  INDEX `idx_accountNo2`(`contact_user`) USING BTREE
 ) ENGINE = InnoDB AUTO_INCREMENT = 1 CHARACTER SET = utf8 COLLATE = utf8_general_ci COMMENT = '公司（交易商）表' ROW_FORMAT = Dynamic;
 
 -- ----------------------------
@@ -282,7 +282,7 @@ CREATE TABLE `t_institution_type`  (
   `institution_type_id` varchar(32) CHARACTER SET utf8 COLLATE utf8_general_ci NOT NULL COMMENT '机构类型id',
   `institution_type_name` varchar(48) CHARACTER SET utf8 COLLATE utf8_general_ci NULL DEFAULT NULL COMMENT '机构类型名称',
   `sort` tinyint(3) NULL DEFAULT NULL COMMENT '类型排序',
-  PRIMARY KEY (`institutionTypeId`) USING BTREE
+  PRIMARY KEY (`institution_type_id`) USING BTREE
 ) ENGINE = InnoDB CHARACTER SET = utf8 COLLATE = utf8_general_ci COMMENT = '机构类型预置表（预置机构类型标识）' ROW_FORMAT = DYNAMIC;
 
 -- ----------------------------
@@ -316,7 +316,7 @@ CREATE TABLE `t_trade_account`  (
   `active_time` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP COMMENT '开户时间',
   `status` smallint(6) NOT NULL COMMENT '状态(0:有效， 1：锁定， 2：禁用）',
   PRIMARY KEY (`id`) USING BTREE,
-  INDEX `idx_accountNo`(`accountNo`) USING BTREE
+  INDEX `idx_accountNo`(`account_no`) USING BTREE
 ) ENGINE = InnoDB AUTO_INCREMENT = 1 CHARACTER SET = utf8 COLLATE = utf8_general_ci COMMENT = '用户账号表' ROW_FORMAT = Dynamic;
 
 -- ----------------------------
@@ -343,8 +343,8 @@ CREATE TABLE `t_trade_deal`  (
   `taxes` bigint(20) NULL DEFAULT NULL COMMENT '税费',
   `status` smallint(6) NOT NULL COMMENT '状态(0:有效，1：无效）',
   PRIMARY KEY (`id`) USING BTREE,
-  INDEX `trade_deal_idx_accountId`(`accountId`) USING BTREE,
-  INDEX `trade_deal_idx_orderId`(`tradeOrderId`) USING BTREE
+  INDEX `trade_deal_idx_accountId`(`account_id`) USING BTREE,
+  INDEX `trade_deal_idx_orderId`(`trade_order_id`) USING BTREE
 ) ENGINE = InnoDB AUTO_INCREMENT = 1 CHARACTER SET = utf8 COLLATE = utf8_general_ci COMMENT = '成交记录表' ROW_FORMAT = Dynamic;
 
 -- ----------------------------
@@ -386,7 +386,7 @@ CREATE TABLE `t_trade_group`  (
   `status` smallint(6) NOT NULL COMMENT '状态(0:启用， 1：禁用）',
   `create_time` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP COMMENT '创建时间',
   PRIMARY KEY (`id`) USING BTREE,
-  INDEX `idx_groupNo`(`groupNo`) USING BTREE
+  INDEX `idx_groupNo`(`group_no`) USING BTREE
 ) ENGINE = InnoDB AUTO_INCREMENT = 1 CHARACTER SET = utf8 COLLATE = utf8_general_ci COMMENT = '用户账户组表' ROW_FORMAT = Dynamic;
 
 -- ----------------------------
@@ -413,8 +413,8 @@ CREATE TABLE `t_trade_order`  (
   `exec_price` bigint(20) NULL DEFAULT NULL COMMENT '成交价格',
   `exec_time` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP COMMENT '成交时间',
   PRIMARY KEY (`id`) USING BTREE,
-  INDEX `trade_order_idx_account_id`(`accountId`) USING BTREE,
-  INDEX `trade_order_idx_stockid`(`stockId`) USING BTREE
+  INDEX `trade_order_idx_account_id`(`account_id`) USING BTREE,
+  INDEX `trade_order_idx_stockid`(`stock_id`) USING BTREE
 ) ENGINE = InnoDB AUTO_INCREMENT = 1 CHARACTER SET = utf8 COLLATE = utf8_general_ci COMMENT = '订单表' ROW_FORMAT = Dynamic;
 
 -- ----------------------------
@@ -439,8 +439,8 @@ CREATE TABLE `t_trade_position`  (
   `status` smallint(6) NOT NULL COMMENT '状态(0:有效，1：无效）',
   `interest` bigint(20) NULL DEFAULT NULL COMMENT '持仓累计利息(默认两位小数)',
   PRIMARY KEY (`id`) USING BTREE,
-  INDEX `trade_position_idx_accountId`(`accountId`) USING BTREE,
-  INDEX `trade_stock_idx_orderId`(`stockId`) USING BTREE
+  INDEX `trade_position_idx_accountId`(`account_id`) USING BTREE,
+  INDEX `trade_stock_idx_orderId`(`stock_id`) USING BTREE
 ) ENGINE = InnoDB AUTO_INCREMENT = 1 CHARACTER SET = utf8 COLLATE = utf8_general_ci COMMENT = '仓位表' ROW_FORMAT = Dynamic;
 
 -- ----------------------------
@@ -512,7 +512,7 @@ CREATE TABLE `t_trade_stock_kline`  (
   `amount` bigint(20) NULL DEFAULT NULL COMMENT '成交金额',
   `time` bigint(20) NULL DEFAULT NULL COMMENT '报价时间',
   PRIMARY KEY (`id`) USING BTREE,
-  INDEX `trade_stock_kline_idx_stockId_time`(`stockId`, `time`) USING BTREE
+  INDEX `trade_stock_kline_idx_stockId_time`(`stock_id`, `time`) USING BTREE
 ) ENGINE = InnoDB AUTO_INCREMENT = 1 CHARACTER SET = utf8 COLLATE = utf8_general_ci COMMENT = '股票K线表' ROW_FORMAT = Dynamic;
 
 -- ----------------------------
@@ -553,7 +553,7 @@ CREATE TABLE `t_trade_stock_quote_last`  (
   `amount` bigint(20) NULL DEFAULT NULL COMMENT '当前成交金额',
   `time` bigint(20) NULL DEFAULT NULL COMMENT '报价时间',
   PRIMARY KEY (`id`) USING BTREE,
-  INDEX `trade_stock_quote_idx_stockId`(`stockId`) USING BTREE
+  INDEX `trade_stock_quote_idx_stockId`(`stock_id`) USING BTREE
 ) ENGINE = InnoDB AUTO_INCREMENT = 1 CHARACTER SET = utf8 COLLATE = utf8_general_ci COMMENT = '股票分时行情报价表' ROW_FORMAT = Dynamic;
 
 -- ----------------------------
@@ -574,7 +574,7 @@ CREATE TABLE `t_trade_stock_quote_summary`  (
   `open_price_time` bigint(20) NULL DEFAULT NULL COMMENT '开盘时间',
   `close_price_time` bigint(20) NULL DEFAULT NULL COMMENT '收盘时间',
   PRIMARY KEY (`id`) USING BTREE,
-  INDEX `trade_stock_quote_summary_idx_stockId`(`stockId`) USING BTREE
+  INDEX `trade_stock_quote_summary_idx_stockId`(`stock_id`) USING BTREE
 ) ENGINE = InnoDB AUTO_INCREMENT = 1 CHARACTER SET = utf8 COLLATE = utf8_general_ci COMMENT = '股票报价概要表' ROW_FORMAT = Dynamic;
 
 -- ----------------------------
@@ -599,7 +599,7 @@ CREATE TABLE `t_trade_user`  (
   `status` smallint(6) NOT NULL COMMENT '状态(0:有效， 1：锁定， 2：禁用）',
   `create_time` datetime NULL DEFAULT NULL COMMENT '创建时间',
   PRIMARY KEY (`id`) USING BTREE,
-  INDEX `idx_userNo`(`userNo`) USING BTREE
+  INDEX `idx_userNo`(`user_no`) USING BTREE
 ) ENGINE = InnoDB AUTO_INCREMENT = 1 CHARACTER SET = utf8 COLLATE = utf8_general_ci COMMENT = '用户表' ROW_FORMAT = Dynamic;
 
 -- ----------------------------
@@ -622,7 +622,7 @@ CREATE TABLE `t_trade_user_file`  (
   `create_time` datetime NULL DEFAULT NULL COMMENT '创建时间',
   `update_time` datetime NOT NULL DEFAULT CURRENT_TIMESTAMP COMMENT '更新时间',
   PRIMARY KEY (`id`) USING BTREE,
-  INDEX `idx_userId`(`userId`) USING BTREE
+  INDEX `idx_userId`(`user_id`) USING BTREE
 ) ENGINE = InnoDB AUTO_INCREMENT = 1 CHARACTER SET = utf8 COLLATE = utf8_general_ci COMMENT = '用户文件表' ROW_FORMAT = Dynamic;
 
 -- ----------------------------
