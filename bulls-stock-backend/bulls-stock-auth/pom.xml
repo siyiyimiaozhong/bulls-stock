@@ -112,11 +112,11 @@
             <version>${druid.version}</version>
         </dependency>
 
-<!--        &lt;!&ndash; 解决druid log4j监控组件无法使用问题， 不用再额外增加其他LOG框架 &ndash;&gt;-->
-<!--        <dependency>-->
-<!--            <groupId>org.slf4j</groupId>-->
-<!--            <artifactId>slf4j-log4j12</artifactId>-->
-<!--        </dependency>-->
+        <!--        &lt;!&ndash; 解决druid log4j监控组件无法使用问题， 不用再额外增加其他LOG框架 &ndash;&gt;-->
+        <!--        <dependency>-->
+        <!--            <groupId>org.slf4j</groupId>-->
+        <!--            <artifactId>slf4j-log4j12</artifactId>-->
+        <!--        </dependency>-->
 
         <!-- mysql-connector-java -->
         <dependency>

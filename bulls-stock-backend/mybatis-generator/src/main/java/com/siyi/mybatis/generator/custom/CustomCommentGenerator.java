@@ -38,12 +38,12 @@ public class CustomCommentGenerator {
      */
     public void generateCode() {
         FastAutoGenerator.create(
-                String.format(GeneratorConstant.DB_URL, GeneratorConstant.DB_NAME),
+                        String.format(GeneratorConstant.DB_URL, GeneratorConstant.DB_NAME),
                         GeneratorConstant.USERNAME,
                         GeneratorConstant.PASSWORD
                 ).globalConfig(builder -> {
                     builder.author("siyiyimiaozhong")                     // 作者
-                            .outputDir(System.getProperty("user.dir")+"\\src\\main\\java")    // 输出路径(写到java目录)
+                            .outputDir(System.getProperty("user.dir") + "\\src\\main\\java")    // 输出路径(写到java目录)
                             .enableSwagger()                    // 开启swagger，记得引入依赖并添加配置文件swagger2
                             .commentDate("yyyy-MM-dd  HH:mm")
                             .fileOverride();                    // 开启覆盖之前生成的文件
@@ -58,7 +58,7 @@ public class CustomCommentGenerator {
                             .controller("controller")
                             .mapper("mapper")
                             .xml("mapper")
-                            .pathInfo(Collections.singletonMap(OutputFile.mapperXml,System.getProperty("user.dir")+"\\src\\main\\resources\\mapper"));
+                            .pathInfo(Collections.singletonMap(OutputFile.mapperXml, System.getProperty("user.dir") + "\\src\\main\\resources\\mapper"));
                 })
                 .strategyConfig(builder -> {
                     builder.addInclude(this.tableNames)

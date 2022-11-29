@@ -1,7 +1,7 @@
 package com.siyi.bulls.stock.trade.auth.service;
 
-import com.siyi.bulls.stock.trade.auth.pojo.entity.TradeUser;
 import com.baomidou.mybatisplus.extension.service.IService;
+import com.siyi.bulls.stock.trade.auth.pojo.entity.TradeUser;
 
 /**
  * <p>

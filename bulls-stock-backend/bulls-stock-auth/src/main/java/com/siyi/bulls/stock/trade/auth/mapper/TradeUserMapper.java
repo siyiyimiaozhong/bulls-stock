@@ -1,7 +1,7 @@
 package com.siyi.bulls.stock.trade.auth.mapper;
 
-import com.siyi.bulls.stock.trade.auth.pojo.entity.TradeUser;
 import com.baomidou.mybatisplus.core.mapper.BaseMapper;
+import com.siyi.bulls.stock.trade.auth.pojo.entity.TradeUser;
 import org.apache.ibatis.annotations.Mapper;
 
 /**

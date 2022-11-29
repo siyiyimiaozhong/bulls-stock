@@ -19,7 +19,7 @@ public enum ApplicationErrorCodeEnum implements IErrorCodeEnum {
     PARAMS_NOT_VALID("501", "参数不合法!"),
 
 
-    COMPONENT_LOAD_PROPERTIES_OBJ_HAD_EXIST("000001", "配置文件加载类已经存在" ),
+    COMPONENT_LOAD_PROPERTIES_OBJ_HAD_EXIST("000001", "配置文件加载类已经存在"),
     SYS_ERROR_ENCRYPT_SINGED(IErrorCodeEnum.MODULE_SYSTEM, "000002", "签名加密错误"),
 
     USER_NOT_FOUND(IErrorCodeEnum.MODULE_USER, "100003", "用户不存在！"),
@@ -66,7 +66,8 @@ public enum ApplicationErrorCodeEnum implements IErrorCodeEnum {
         this.module = module;
         this.code = code;
         this.message = message;
-        this.warningLevel = WarningLevelEnum.COMMON;;
+        this.warningLevel = WarningLevelEnum.COMMON;
+        ;
     }
 
 

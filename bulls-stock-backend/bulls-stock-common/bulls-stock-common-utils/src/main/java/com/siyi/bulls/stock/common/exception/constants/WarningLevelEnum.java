@@ -12,7 +12,7 @@ package com.siyi.bulls.stock.common.exception.constants;
 public enum WarningLevelEnum {
 
     /**
-     *  错误级别: 一般,  场景比如常规性的校验, 必填项等, 不能满足充分的业务条件
+     * 错误级别: 一般,  场景比如常规性的校验, 必填项等, 不能满足充分的业务条件
      */
     COMMON(0, "一般"),
 

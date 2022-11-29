@@ -47,6 +47,6 @@ public class GlobalConstants {
     /**
      * 账户交易组， 默认组别
      */
-    public static final String DEFAULT_GROUP_NAME= "默认组";
+    public static final String DEFAULT_GROUP_NAME = "默认组";
 
 }

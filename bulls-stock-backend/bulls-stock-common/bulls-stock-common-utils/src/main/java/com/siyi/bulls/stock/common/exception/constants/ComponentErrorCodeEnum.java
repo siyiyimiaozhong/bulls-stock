@@ -12,7 +12,7 @@ package com.siyi.bulls.stock.common.exception.constants;
 public enum ComponentErrorCodeEnum implements IErrorCodeEnum {
 
 
-    COMPONENT_LOAD_PROPERTIES_OBJ_HAD_EXIST("0001", "配置文件加载类已经存在" ),
+    COMPONENT_LOAD_PROPERTIES_OBJ_HAD_EXIST("0001", "配置文件加载类已经存在"),
     ;
 
     private String module;
@@ -41,7 +41,8 @@ public enum ComponentErrorCodeEnum implements IErrorCodeEnum {
         this.module = module;
         this.code = code;
         this.message = message;
-        this.warningLevel = WarningLevelEnum.COMMON;;
+        this.warningLevel = WarningLevelEnum.COMMON;
+        ;
     }
 
 

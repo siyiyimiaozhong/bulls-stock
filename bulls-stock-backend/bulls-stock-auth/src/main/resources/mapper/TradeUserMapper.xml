@@ -4,18 +4,18 @@
 
     <!-- 通用查询映射结果 -->
     <resultMap id="BaseResultMap" type="com.siyi.bulls.stock.trade.auth.pojo.entity.TradeUser">
-        <id column="id" property="id" />
-        <result column="userNo" property="userNo" />
-        <result column="name" property="name" />
-        <result column="userPwd" property="userPwd" />
-        <result column="phone" property="phone" />
-        <result column="companyId" property="companyId" />
-        <result column="email" property="email" />
-        <result column="address" property="address" />
-        <result column="lastLoginIp" property="lastLoginIp" />
-        <result column="lastLoginTime" property="lastLoginTime" />
-        <result column="status" property="status" />
-        <result column="createTime" property="createTime" />
+        <id column="id" property="id"/>
+        <result column="userNo" property="userNo"/>
+        <result column="name" property="name"/>
+        <result column="userPwd" property="userPwd"/>
+        <result column="phone" property="phone"/>
+        <result column="companyId" property="companyId"/>
+        <result column="email" property="email"/>
+        <result column="address" property="address"/>
+        <result column="lastLoginIp" property="lastLoginIp"/>
+        <result column="lastLoginTime" property="lastLoginTime"/>
+        <result column="status" property="status"/>
+        <result column="createTime" property="createTime"/>
     </resultMap>
 
 </mapper>

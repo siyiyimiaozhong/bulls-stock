@@ -1,9 +1,9 @@
 package com.siyi.bulls.stock.trade.auth.service.impl;
 
-import com.siyi.bulls.stock.trade.auth.pojo.entity.TradeUser;
-import com.siyi.bulls.stock.trade.auth.mapper.TradeUserMapper;
-import com.siyi.bulls.stock.trade.auth.service.TradeUserService;
 import com.baomidou.mybatisplus.extension.service.impl.ServiceImpl;
+import com.siyi.bulls.stock.trade.auth.mapper.TradeUserMapper;
+import com.siyi.bulls.stock.trade.auth.pojo.entity.TradeUser;
+import com.siyi.bulls.stock.trade.auth.service.TradeUserService;
 import org.springframework.stereotype.Service;
 
 /**

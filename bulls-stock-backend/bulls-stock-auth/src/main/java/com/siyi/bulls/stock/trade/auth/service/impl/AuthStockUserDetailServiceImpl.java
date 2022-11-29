@@ -36,15 +36,15 @@ public class AuthStockUserDetailServiceImpl implements UserDetailsService {
     public UserDetails loadUserByUsername(String userNo) throws UsernameNotFoundException {
         // 1. 查询缓存
         Cache cache = cacheManager.getCache(GlobalConstants.OAUTH_KEY_STOCK_USER_DETAILS);
-        if(null != cache && null != cache.get(userNo)) {
-            return (UserDetails)cache.get(userNo).get();
+        if (null != cache && null != cache.get(userNo)) {
+            return (UserDetails) cache.get(userNo).get();
         }
 
         // 2. 缓存未找到, 查询数据库
         QueryWrapper<TradeUser> wrapper = new QueryWrapper<>();
         wrapper.eq("userNo", userNo);
         TradeUser tradeUser = tradeUserMapper.selectOne(wrapper);
-        if(null == tradeUser) {
+        if (null == tradeUser) {
             throw new UsernameNotFoundException(userNo + " not valid!");
         }
         // 3. 对用户信息做封装处理

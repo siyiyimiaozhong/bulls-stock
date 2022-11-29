@@ -27,11 +27,12 @@ public class TradeUserController {
 
     /**
      * 获取用户信息
+     *
      * @param username
      * @return
      */
     @RequestMapping("/user")
-    public Result<UserDetails> getUser(@RequestParam("username")String username) {
+    public Result<UserDetails> getUser(@RequestParam("username") String username) {
         UserDetails userDetails = this.authStockUserDetailService.loadUserByUsername(username);
         return Result.success(userDetails);
     }

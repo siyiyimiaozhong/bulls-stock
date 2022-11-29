@@ -149,7 +149,9 @@ public class EncryptUtil {
      * @throws Exception
      */
     public static byte[] BASE64Decrypt(String data) {
-        if (data == null) return null;
+        if (data == null) {
+            return null;
+        }
         byte[] edata = null;
         try {
             edata = (new BASE64Decoder()).decodeBuffer(data);
