@@ -630,3 +630,10 @@ CREATE TABLE `t_trade_user_file`  (
 -- ----------------------------
 
 SET FOREIGN_KEY_CHECKS = 1;
+
+INSERT INTO `t_oauth_client_details`(`client_id`, `resource_ids`, `client_secret`, `scope`, `authorized_grant_types`, `web_server_redirect_uri`, `authorities`, `access_token_validity`, `refresh_token_validity`, `additional_information`, `autoapprove`) VALUES
+('admin', NULL, 'ISMvKXpXpadDiUoOSoAfww==', 'read_writer', 'password_refresh_token', NULL, NULL, NULL, NULL, NULL, NULL),
+('app', NULL, '0qV9wdiD/SH7mVFpnfccxw==', 'server', 'password,refresh_token', NULL, NULL, NULL, NULL, NULL, 'true');
+
+INSERT INTO `t_trade_user`(`id`, `user_no`, `name`, `user_pwd`, `phone`, `company_id`, `email`, `address`, `last_login_ip`, `last_login_time`, `status`, `create_time`) VALUES
+(1, 'admin', 'admin', 'ISMvKXpXpadDiUoOSoAfww==', '123', 1, NULL, NULL, NULL, NULL, 0, NULL);

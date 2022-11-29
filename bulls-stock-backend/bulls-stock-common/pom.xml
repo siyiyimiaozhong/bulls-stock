@@ -14,6 +14,8 @@
     <modules>
         <module>bulls-stock-common-dao</module>
         <module>bulls-stock-common-service</module>
+        <module>bulls-stock-common-system</module>
+        <module>bulls-stock-common-utils</module>
         <module>bulls-stock-common-web</module>
     </modules>
 

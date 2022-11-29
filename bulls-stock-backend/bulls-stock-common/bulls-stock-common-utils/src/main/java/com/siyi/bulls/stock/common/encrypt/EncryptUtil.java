@@ -2,8 +2,7 @@ package com.siyi.bulls.stock.common.encrypt;
 
 import com.siyi.bulls.stock.common.exception.ComponentException;
 import com.siyi.bulls.stock.common.exception.constants.ApplicationErrorCodeEnum;
-import org.slf4j.Logger;
-import org.slf4j.LoggerFactory;
+import lombok.extern.slf4j.Slf4j;
 import sun.misc.BASE64Decoder;
 import sun.misc.BASE64Encoder;
 
@@ -24,9 +23,9 @@ import java.security.SecureRandom;
  * @Version: 1.0
  */
 @SuppressWarnings("restriction")
+@Slf4j
 public class EncryptUtil {
-
-    private static final Logger logger = LoggerFactory.getLogger(EncryptUtil.class);
+//    private static final log log = LoggerFactory.getLogger(EncryptUtil.class);
 
 
     private final static char[] hexDigits = {'0', '1', '2', '3', '4', '5', '6', '7', '8', '9', 'a', 'b', 'c', 'd', 'e', 'f'};
@@ -53,7 +52,7 @@ public class EncryptUtil {
             }
             return new String(str);
         } catch (Exception e) {
-            logger.error(e.getMessage(), e);
+            log.error(e.getMessage(), e);
             return null;
         }
     }
@@ -156,7 +155,7 @@ public class EncryptUtil {
             edata = (new BASE64Decoder()).decodeBuffer(data);
             return edata;
         } catch (Exception e) {
-            logger.error(e.getMessage(), e);
+            log.error(e.getMessage(), e);
         }
         return null;
     }
@@ -165,7 +164,7 @@ public class EncryptUtil {
      * @param key 24位密钥
      * @param str 源字符串
      * @return
-     * @throws EncryptException
+     * @throws ComponentException
      */
     public static byte[] DES3Encrypt(String key, String str) throws ComponentException {
 
@@ -190,7 +189,7 @@ public class EncryptUtil {
             return bt;
 
         } catch (Exception e) {
-            logger.error(e.getMessage(), e);
+            log.error(e.getMessage(), e);
             throw new ComponentException(ApplicationErrorCodeEnum.SYS_ERROR_ENCRYPT_SINGED, "DES3加密签名错误！key=" + key + ", str=" + str + ", error=" + e.getMessage());
         }
 
@@ -199,7 +198,7 @@ public class EncryptUtil {
     /**
      * 解密
      *
-     * @param data
+     * @param edata
      * @param key
      * @return
      * @throws Exception
@@ -222,7 +221,7 @@ public class EncryptUtil {
                 data = new String(bb, "UTF-8");
             }
         } catch (Exception e) {
-            logger.error(e.getMessage(), e);
+            log.error(e.getMessage(), e);
         }
         return data;
     }
@@ -231,7 +230,7 @@ public class EncryptUtil {
      * 方法用途: 签名加密<br>
      * 实现步骤: <br>
      *
-     * @param signStr ：签名的字符串
+     * @param signed ：签名的字符串
      * @return
      */
     public static String encryptSigned(String signed) throws ComponentException {

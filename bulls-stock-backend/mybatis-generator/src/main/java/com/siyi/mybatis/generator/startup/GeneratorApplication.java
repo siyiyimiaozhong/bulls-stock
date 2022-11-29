@@ -16,8 +16,8 @@ import java.util.List;
 public class GeneratorApplication {
 
     public static void main(String[] args) {
-        List<String> tableNames = Arrays.asList("t_company", "t_trade_user");
-        String modelName = "trade.oauth";
+        List<String> tableNames = Arrays.asList("t_trade_user");
+        String modelName = "trade.auth";
         CustomCommentGenerator generator = new CustomCommentGenerator(modelName, tableNames);
         generator.generateCode();
     }

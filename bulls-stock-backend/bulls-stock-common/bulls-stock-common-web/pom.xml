@@ -17,4 +17,11 @@
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
     </properties>
 
+    <dependencies>
+        <dependency>
+            <groupId>com.siyi.bulls</groupId>
+            <artifactId>bulls-stock-common-utils</artifactId>
+            <version>${project.stock.version}</version>
+        </dependency>
+    </dependencies>
 </project>

@@ -11,24 +11,19 @@
     <modules>
         <module>bulls-stock-gateway</module>
         <module>bulls-stock-user</module>
-<!--        <module>cat-demo</module>-->
-<!--        <module>sentinel-demo</module>-->
-<!--        <module>hateoas-demo</module>-->
-<!--        <module>nacos-demo</module>-->
-<!--        <module>ceph-demo</module>-->
-<!--        <module>grpc-demo</module>-->
-<!--        <module>netty-demo</module>-->
         <module>mybatis-generator</module>
         <module>bulls-stock-common</module>
-        <module>bulls-stock-common/bulls-stock-common-system</module>
-        <module>bulls-stock-common/bulls-stock-common-utils</module>
         <module>bulls-stock-entity</module>
+        <module>bulls-stock-auth</module>
     </modules>
 
     <!-- 自定义属性， 统一管理版本 -->
     <properties>
-        <spring.cloud.alibaba.version>2.1.1.RELEASE</spring.cloud.alibaba.version>
+        <spring.cloud.alibaba.version>2.1.2.RELEASE</spring.cloud.alibaba.version>
         <spring-cloud-gateway.version>2.1.2.RELEASE</spring-cloud-gateway.version>
+        <spring-cloud-starter.version>2.1.2.RELEASE</spring-cloud-starter.version>
+        <druid.version>1.1.21</druid.version>
+        <project.stock.version>1.0.0</project.stock.version>
         <spring-boot.version>2.1.6.RELEASE</spring-boot.version>
         <maven.compiler.source>1.8</maven.compiler.source>
         <maven.compiler.target>1.8</maven.compiler.target>
@@ -38,6 +33,10 @@
         <velocity.version>2.3</velocity.version>
         <springfox.version>3.0.0</springfox.version>
         <freemarker.version>2.3.31</freemarker.version>
+        <mysql.version>8.0.14</mysql.version>
+        <guava.version>22.0</guava.version>
+        <lombok.version>1.18.24</lombok.version>
+        <hutool.version>5.7.22</hutool.version>
     </properties>
 
     <dependencies>
@@ -45,13 +44,19 @@
         <dependency>
             <groupId>org.projectlombok</groupId>
             <artifactId>lombok</artifactId>
-            <version>1.18.24</version>
+            <version>${lombok.version}</version>
             <optional>true</optional>
         </dependency>
     </dependencies>
 
     <dependencyManagement>
         <dependencies>
+            <dependency>
+                <groupId>com.google.guava</groupId>
+                <artifactId>guava</artifactId>
+                <version>${guava.version}</version>
+            </dependency>
+
             <!-- Spring Cloud Alibaba 依赖组件 -->
             <dependency>
                 <groupId>com.alibaba.cloud</groupId>
@@ -59,6 +64,12 @@
                 <version>${spring.cloud.alibaba.version}</version>
                 <type>pom</type>
                 <scope>import</scope>
+                <exclusions>
+                    <exclusion>
+                        <groupId>com.google.guava</groupId>
+                        <artifactId>guava</artifactId>
+                    </exclusion>
+                </exclusions>
             </dependency>
             <!-- Spring Cloud 普通依赖组件 -->
             <dependency>
@@ -83,6 +94,13 @@
                 <groupId>org.springframework.boot</groupId>
                 <artifactId>spring-boot-dependencies</artifactId>
                 <version>${spring-boot.version}</version>
+                <exclusions>
+                    <!--排除掉springboot自带的logging，避免冲突-->
+                    <exclusion>
+                        <groupId>org.springframework.boot</groupId>
+                        <artifactId>spring-boot-starter-logging</artifactId>
+                    </exclusion>
+                </exclusions>
                 <type>pom</type>
                 <scope>import</scope>
             </dependency>
@@ -116,6 +134,12 @@
                 <groupId>io.springfox</groupId>
                 <artifactId>springfox-boot-starter</artifactId>
                 <version>${springfox.version}</version>
+            </dependency>
+
+            <dependency>
+                <groupId>cn.hutool</groupId>
+                <artifactId>hutool-core</artifactId>
+                <version>${hutool.version}</version>
             </dependency>
         </dependencies>
     </dependencyManagement>
